@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       firebaseConfig: {
-        databaseURL: "https://major-project-d3e48-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        databaseURL: process.env.VUE_APP_FIREBASE_DATABASE_URL
       },
       sensorData: [],
       isLoading: false,
