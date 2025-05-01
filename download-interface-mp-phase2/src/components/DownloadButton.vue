@@ -84,8 +84,12 @@ export default {
           });
         }
         
-        // Sort by timestamp
-        this.sensorData.sort((a, b) => a.timestamp - b.timestamp);
+        // Sort by received_datetime
+        this.sensorData.sort((a, b) => {
+          const dateA = new Date(a.received_datetime);
+          const dateB = new Date(b.received_datetime);
+          return dateA - dateB;
+        });
         
       } catch (error) {
         console.error('Error fetching data:', error);
